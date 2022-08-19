@@ -56,7 +56,7 @@ lsp_installer.setup {
 local servers = {
   bashls = require('scripts.lsp.config.default'),                 -- bash
   ccls = require('scripts.lsp.config.default'),                   -- c/c++
-  clangd = require('scripts.lsp.config.default'),                 -- c/c++
+  -- clangd = require('scripts.lsp.config.default'),                 -- c/c++
   cmake = require('scripts.lsp.config.default'),                  -- cmake
   cssls = require('scripts.lsp.config.default'),                  -- css
   eslint = require('scripts.lsp.config.default'),                 -- js/ts
