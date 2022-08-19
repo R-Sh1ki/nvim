@@ -1,0 +1,41 @@
+# File	:	all.snippets
+# Author:	Shiki
+# E-mail:	<ryougi.shiki.kong@outlook.com>
+# Time	:	2022-08-19 17:50:48
+
+global !p
+
+import vim
+def get_comment_format():
+	commentstring = vim.eval("&commentstring")
+	if commentstring.endswith("%s"):
+		c = commentstring[:-2]
+		return (c.rstrip(), c.rstrip(), c.rstrip(), "")
+	comments = _parse_comments(vim.eval("&comments"))
+	for c in comments:
+		if c[0] == "SINGLE_CHAR":
+			return c[1:]
+	return comments[0][1:]
+
+endglobal
+
+snippet box "Box" b
+`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
+snippet chead "custom head" b
+`!p snip.rv = get_comment_format()[0] + " File	:	" + snip.fn`
+`!p snip.rv = get_comment_format()[0] + " Author:	Shiki"`
+`!p snip.rv = get_comment_format()[0] + " E-mail:	<ryougi.shiki.kong@outlook.com>"`
+`!p from datetime import datetime
+snip.rv = get_comment_format()[0] + " Time	:	" + datetime.now().strftime("%Y-%m-%d %H:%M:%S%z")`
+endsnippet
+
+snippet date "date" b
+`!p from datetime import datetime
+snip.rv = datetime.now().strftime("%Y-%m-%d %H:%M:%S%z")`
+endsnippet
+

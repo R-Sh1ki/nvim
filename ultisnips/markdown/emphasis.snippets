@@ -1,0 +1,25 @@
+snippet * "Italic" b
+*${1:${VISUAL:Text}}*$0
+endsnippet
+
+snippet ** "Strong" b
+**${1:${VISUAL:Text}}**$0
+endsnippet
+
+snippet *** "Italic and Strong" b
+***${1:${VISUAL:Text}}***$0
+endsnippet
+
+snippet _ "underline" b
+<u>${1:${VISUAL:Text}}<u>$0
+endsnippet
+
+snippet /* "Comment" b
+<!-- ${1:${VISUAL}} -->$0
+endsnippet
+
+snippet > "Quote" b
+> ${1:${VISUAL:Text}:${VISUAL:Text}}
+
+$0
+endsnippet
