@@ -1,7 +1,7 @@
-# File	:	all.snippets
-# Author:	Shiki
-# E-mail:	<ryougi.shiki.kong@outlook.com>
-# Time	:	2022-08-19 17:50:48
+# File  : all.snippets
+# Author: Shiki
+# E-mail: <ryougi.shiki.kong@outlook.com>
+# Time  : 2022-08-19 18:04:20
 
 global !p
 
@@ -26,12 +26,12 @@ snippet box "Box" b
 $0
 endsnippet
 
-snippet chead "custom head" b
-`!p snip.rv = get_comment_format()[0] + " File	:	" + snip.fn`
-`!p snip.rv = get_comment_format()[0] + " Author:	Shiki"`
-`!p snip.rv = get_comment_format()[0] + " E-mail:	<ryougi.shiki.kong@outlook.com>"`
+snippet chead "code head" b
+`!p snip.rv = get_comment_format()[0] + " File  : " + snip.fn`
+`!p snip.rv = get_comment_format()[0] + " Author: Shiki"`
+`!p snip.rv = get_comment_format()[0] + " E-mail: <ryougi.shiki.kong@outlook.com>"`
 `!p from datetime import datetime
-snip.rv = get_comment_format()[0] + " Time	:	" + datetime.now().strftime("%Y-%m-%d %H:%M:%S%z")`
+snip.rv = get_comment_format()[0] + " Time  : " + datetime.now().strftime("%Y-%m-%d %H:%M:%S%z")`
 endsnippet
 
 snippet date "date" b
