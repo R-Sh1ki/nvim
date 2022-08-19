@@ -15,6 +15,7 @@ require('scripts.config.comment')
 require('scripts.config.indent-blankline')
 require('scripts.config.toggleterm')
 require('scripts.config.autopairs')
+require('scripts.config.gitsigns')
 
 -- Treesitter
 require('scripts.config.nvim-treesitter')

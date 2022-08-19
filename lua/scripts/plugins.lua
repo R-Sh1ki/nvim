@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'                         -- indent plugin
   use 'akinsho/toggleterm.nvim'                                     -- open terminal
   use 'windwp/nvim-autopairs'                                       -- auto pairs
+  use 'lewis6991/gitsigns.nvim'                                     -- git signs
 
   ----- Treesittetr
   use 'nvim-treesitter/nvim-treesitter'                             -- parsers and highlighter
