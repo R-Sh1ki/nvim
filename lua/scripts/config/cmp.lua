@@ -23,24 +23,19 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    -- ["<Tab>"] = cmp.mapping(
-    --   function(fallback)
-    --     cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
-    --   end,
-    --   { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-    -- ),
     ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), 
   }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
+  sources = {
     { name = "ultisnips" },
-  }, {
+    { name = 'nvim_lsp' },
+    { name = 'cmp_tabnine' },
     { name = 'path' },        -- cmp-path
-    { name = 'buffer' },      -- cmp-buffer
     { name = 'spell' },       -- cmp-spell
-  })
+    { name = 'buffer' },      -- cmp-buffer
+    { name = "treesitter" },  -- treesitter
+  },
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

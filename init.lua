@@ -27,6 +27,7 @@ require('scripts.config.project')
 -- CMP
 require('scripts.config.cmp')
 require('scripts.config.ultisnips')
+require('scripts.config.tabnine')
 
 -- Lsp
 require('scripts.lsp.lsp')
@@ -36,6 +37,7 @@ require('scripts.config.markdown')
 require('scripts.config.markdown-clipboard-img')
 
 -- Latex
+require('scripts.config.vimtex')
 
 -- Dap
 require('scripts.dap.dap')

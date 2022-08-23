@@ -81,6 +81,7 @@ return require('packer').startup(function(use)
   use 'f3fora/cmp-spell'                                            -- spell for nvim-cmp
   use 'SirVer/ultisnips'                                            -- speed in vim
   use 'quangnguyen30192/cmp-nvim-ultisnips'                         -- ultisnips for nvim-cmp
+  use { 'tzachar/cmp-tabnine', run='./install.sh' }                 -- tabnine for nvim-cmp
 
   ----- markdown
   use { 'iamcco/markdown-preview.nvim',                             -- markdown previewer

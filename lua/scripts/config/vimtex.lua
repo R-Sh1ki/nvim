@@ -4,27 +4,31 @@ vim.g.vimtex_imaps_enabled = 0
 vim.g.vimtex_view_automatic = 0
 -- PDF viewer settings
 vim.g.forward_search_on_start = 0
-vim.g.vimtex_view_general_viewer = "okular"
-vim.g.vimtex_view_general_options = [[ --noraise file:@pdf#src:@line@tex ]]
+
+--
+vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_view_general_viewer = 'zathura'
+vim.g.vimtex_compiler_progname = 'nvr'
+
 -- LaTex engines
-vim.g.vimtex_compiler_latexmk_engines = { 
-  ["_"] = "-xelatex",
-  ["pdflatex"] = "-pdf",
-  ["dvipdfex"] = "-pdfdvi",
-  ["lualatex"] = "-lualatex",
-  ["xelatex"] = "-xelatex",
-  ["bibtex"] = "-bibtex",
+vim.g.vimtex_compiler_latexmk_engines = {
+  _ = '-pdf',
+  xelatex = '-xelatex',
+  bibtex = '-bibtex',
+  pdflatex = '-pdf',
 }
 
 vim.g.vimtex_compiler_latexmk = {
-  ["build_dir"] = "./build",
-  ["options"] = {
-    '-xelatex',
+  build_dir = "./build",
+  callback = 1,
+  continuous = 1,
+  executable = 'latexmk',
+  options = {
     '-verbose',
     '-file-line-error',
     '-synctex=1',
     '-interaction=nonstopmode',
-    '--shell-escape',
+    '-shell-escape',
   }
 }
 
